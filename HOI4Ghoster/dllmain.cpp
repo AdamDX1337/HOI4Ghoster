@@ -30,13 +30,13 @@ void* __fastcall Command(size_t Size) {
 }
 
 int i = 0;
-int* TagPtr = &i;
-void* EnableAI = (void*)Command(56);
+int* _ptr = &i;
+void* CommandVar = (void*)Command(56);
 
 //AddPlayer Command Hook
 void* __fastcall hkCAddPlayerCommand(void* pThis, void* User, void* Name, DWORD* unknown, int nMachineId, bool bHotjoin, __int64 a7)
 {
-	return (void*)UselessDummyFunc(EnableAI, TagPtr, 0); //returning this instead of add player function
+	return (void*)UselessDummyFunc(CommandVar, _ptr, 0); //returning this instead of add player function
 }
 
 
